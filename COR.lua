@@ -373,6 +373,8 @@ function init_gear_sets()
         feet="Ikenga's Clogs",
         ear1="Beyla Earring",
         waist="Elanid Belt",
+        neck="Marked Gorget",
+        
     }
 
     -- WS Buff Sets
@@ -489,6 +491,8 @@ function init_gear_sets()
     -- NIN
     sets.precast.FC = {
         head="Carmine Mask +1",
+        body={ name="Taeon Tabard", augments={'"Fast Cast"+5',}},
+        legs={ name="Herculean Trousers", augments={'Mag. Acc.+7','"Fast Cast"+5','INT+6','"Mag.Atk.Bns."+6',}},
         feet="Carmine Greaves +1",
         left_ear="Enchntr. Earring +1",
     }
@@ -541,7 +545,7 @@ function init_gear_sets()
         legs="Chas. Culottes +2",
         feet="Malignance Boots",
         left_ear="Telos Earring",
-        right_ear="Volley Earring",
+        right_ear="Crep. Earring",
         left_ring="Crepuscular Ring",
         right_ring="Rajas Ring",
         back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Mag. Evasion+15',}},
@@ -718,6 +722,7 @@ function init_gear_sets()
         waist="Fotia Belt",
         left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
         right_ear="Telos Earring",
+        left_ring="Levia. Ring +1",
         right_ring="Epona's Ring",
         back={ name="Camulus's Mantle", augments={'MND+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Mag. Evasion+6',}},
     }
@@ -796,14 +801,14 @@ function init_gear_sets()
     }
     
     sets.midcast.CorsairShot.STP = {
-        ammo=gear.QDbullet,
+        ammo="Hauksbok Bullet",
         head="Malignance Chapeau",
         body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Chas. Culottes +2",
         feet="Malignance Boots",
         neck="Iskur Gorget",
-        ear1="Dedition Earring",
+        left_ear="Crep. Earring",
         ear2="Telos Earring",
         ring1="Crepuscular Ring",
         ring2="Chirich Ring +1",
@@ -812,7 +817,7 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Light Shot'] = {
-        ammo=gear.RAccbullet,
+        ammo="Animikii Bullet",
         head="Mummu Bonnet +2",
         body="Malignance Tabard",
         hands="Mummu Wrists +2",
@@ -820,6 +825,7 @@ function init_gear_sets()
         feet="Mummu Gamash. +2",
         neck={ name="Comm. Charm +2", augments={'Path: A',}},
         waist="K. Kachina Belt +1",
+        left_ear="Crep. Earring",
         right_ear="Breeze Pearl",
         left_ring="Mummu Ring",
         right_ring="Stikini Ring +1",
@@ -841,10 +847,8 @@ function init_gear_sets()
     sets.midcast.FastRecast = sets.precast.FC
 
     sets.midcast.SpellInterrupt = {
-        -- body=gear.Taeon_Phalanx_body, --10
         hands="Rawhide Gloves", --15
         legs="Carmine Cuisses +1", --20
-        -- feet=gear.Taeon_Phalanx_feet, --10
         neck="Loricate Torque +1", --5
         ear1="Halasz Earring", --5
         ear2="Magnetic Earring", --8
@@ -934,6 +938,9 @@ function init_gear_sets()
     sets.engaged = {
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        body={ name="Herculean Vest", augments={'Rng.Atk.+18','"Triple Atk."+3','Accuracy+11',}},
+        legs={ name="Taeon Tights", augments={'Accuracy+21','"Dual Wield"+4','DEX+8',}},
+        feet={ name="Herculean Boots", augments={'Attack+6','"Triple Atk."+4','DEX+4',}},
         waist="Windbuffet Belt +1",
         ear1="Mache Earring +1",
         left_ring="Rajas Ring",
@@ -966,7 +973,6 @@ function init_gear_sets()
     })
 
     sets.engaged.STP = set_combine(sets.engaged, {
-        -- head=gear.Herc_STP_head, need to get this
         ring1="Chirich Ring +1",
         ring2="Chirich Ring +1",
     })
@@ -976,10 +982,14 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
+        head={ name="Herculean Helm", augments={'"Dual Wield"+6','AGI+8','Accuracy+2',}},
         body={ name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        hands={ name="Taeon Gloves", augments={'"Dual Wield"+4','DEX+7','Accuracy+20','Attack+20'}},
         legs="Carmine Cuisses +1",
+        feet={ name="Taeon Boots", augments={'Accuracy+23','"Dual Wield"+5','DEX+10',}},
         waist="Reiki Yotai",
         left_ear="Eabani Earring",
+        right_ear="Suppanomimi",
         left_ring="Rajas Ring",
         right_ring="Epona's Ring",
         back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}},
@@ -1017,7 +1027,6 @@ function init_gear_sets()
 
     sets.engaged.DW.STP = set_combine(
         sets.engaged.DW, {
-            -- head=gear.Herc_STP_head, need to get this
             ring1="Chirich Ring +1",
             ring2="Chirich Ring +1",
         }
@@ -1027,9 +1036,12 @@ function init_gear_sets()
     sets.engaged.DW.LowHaste = {
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body={ name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        hands={ name="Taeon Gloves", augments={'"Dual Wield"+4','DEX+7','Accuracy+20','Attack+20'}},
         legs="Carmine Cuisses +1",
+        feet={ name="Taeon Boots", augments={'Accuracy+23','"Dual Wield"+5','DEX+10',}},
         waist="Reiki Yotai",
         left_ear="Eabani Earring",
+        right_ear="Suppanomimi",
         left_ring="Rajas Ring",
         right_ring="Epona's Ring",
         back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}},
@@ -1067,7 +1079,6 @@ function init_gear_sets()
 
     sets.engaged.DW.STP.LowHaste = set_combine(
         sets.engaged.DW.LowHaste, {
-            -- head=gear.Herc_STP_head, need to get this
             ring1="Chirich Ring +1",
             ring2="Chirich Ring +1",
         }
@@ -1078,8 +1089,11 @@ function init_gear_sets()
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body={ name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        legs={ name="Taeon Tights", augments={'Accuracy+21','"Dual Wield"+4','DEX+8',}},
+        feet={ name="Taeon Boots", augments={'Accuracy+23','"Dual Wield"+5','DEX+10',}},
         waist="Reiki Yotai",
         left_ear="Eabani Earring",
+        right_ear="Suppanomimi",
         left_ring="Rajas Ring",
         right_ring="Epona's Ring",
         back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}},
@@ -1130,8 +1144,11 @@ function init_gear_sets()
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body={ name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        legs={ name="Taeon Tights", augments={'Accuracy+21','"Dual Wield"+4','DEX+8',}},
+        feet={ name="Taeon Boots", augments={'Accuracy+23','"Dual Wield"+5','DEX+10',}},
         waist="Reiki Yotai",
         left_ear="Eabani Earring",
+        right_ear="Suppanomimi",
         left_ring="Rajas Ring",
         right_ring="Epona's Ring",
         back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}},
@@ -1171,7 +1188,6 @@ function init_gear_sets()
 
     sets.engaged.DW.STP.HighHaste = set_combine(
         sets.engaged.DW.HighHaste, {
-            -- head=gear.Herc_STP_head, need to get this
             ring1="Chirich Ring +1",
             ring2="Chirich Ring +1",
         }
@@ -1182,8 +1198,11 @@ function init_gear_sets()
         head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         body={ name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
         hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+        legs={ name="Taeon Tights", augments={'Accuracy+21','"Dual Wield"+4','DEX+8',}},
+        feet={ name="Herculean Boots", augments={'Attack+6','"Triple Atk."+4','DEX+4',}},
         waist="Windbuffet Belt +1",
         left_ear="Telos Earring",
+        right_ear="Suppanomimi",
         left_ring="Rajas Ring",
         right_ring="Epona's Ring",
         back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}},
@@ -1222,7 +1241,6 @@ function init_gear_sets()
 
     sets.engaged.DW.STP.MaxHaste = set_combine(
         sets.engaged.DW.MaxHaste, {
-            -- head=gear.Herc_STP_head, need to get this
             ring1="Chirich Ring +1",
             ring2="Chirich Ring +1",
         }

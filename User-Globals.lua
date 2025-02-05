@@ -8,6 +8,7 @@ function define_global_sets()
         head="Mummu Bonnet +2",
         hands="Slither Gloves +1",
         legs="Dashing Subligar",
+        feet={ name="Herculean Boots", augments={'Accuracy+7','"Waltz" potency +9%','AGI+4',}},
         waist="Aristo Belt",
         left_ear="Enchntr. Earring +1",
         left_ring="Asklepian Ring",
